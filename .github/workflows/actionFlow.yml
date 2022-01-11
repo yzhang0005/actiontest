@@ -17,11 +17,12 @@ jobs:
           import platform
           print
           (platform.processor())
-        shell: python   //set the specific shell to use
+        # set the specific shell to use
+        shell: python
 
   run-windows-commands:
     runs-on: windows-latest
-    //usually, the jobs are run parallelly, the jobs' run can be ordered by adding dependences
+    # usually, the jobs are run parallelly, the jobs' run can be ordered by adding dependences
     needs: ["run-shell-command"]
     steps:
       - name: Directory PowerShell
