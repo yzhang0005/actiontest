@@ -1,13 +1,7 @@
-name: Simple Action
-#on: [push]
+name: repo dispatch test
 on:
-  #push:
-  #schedule:
-  #  - cron: "0/5 * * * *"
-  #  - cron: "0/6 * * * *"
-  pull_request:
-    types: [opened,closed,assigned,reopened]
-
+  repository_dispatch:
+    types: [build]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest

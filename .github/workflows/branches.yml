@@ -1,22 +1,19 @@
-name: Simple Action
-#on: [push]
+name: branch test
 on:
-  #push:
-  #schedule:
-  #  - cron: "0/5 * * * *"
-  #  - cron: "0/6 * * * *"
   pull_request:
-    types: [opened,closed,assigned,reopened]
-
+    branches:
+      - master
+      - "feature/*" #matches feature/featA,feature/featB,not match feature/feat/a
+      - "feature/**" #matches all feature/*/*...
 jobs:
-  run-github-actions:
+  run-branch-test-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: List Files
+      - name: list files
         run: |
           pwd
           ls -a
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v1
       - name: List Files After
         run: |
@@ -26,3 +23,4 @@ jobs:
           echo "${{ github.token }}"
           pwd
           ls -a
+
