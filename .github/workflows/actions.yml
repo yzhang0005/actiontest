@@ -1,7 +1,10 @@
 name: Simple Action
 #on: [push]
 on:
-  push:
+  #push:
+  schedule:
+    - cron: "0/5 * * * *"
+    - cron: "0/6 * * * *"
   pull_request:
     types: [opened,closed,assigned,reopened]
 
