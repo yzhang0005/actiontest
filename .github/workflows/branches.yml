@@ -1,0 +1,24 @@
+name: branch test
+on:
+  push:
+    branch:
+      - master
+jobs:
+  run-branch-test-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: list files
+        run: |
+          pwd
+          ls -a
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: List Files After
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHIB_WORKSPACE
+          echo "${{ github.token }}"
+          pwd
+          ls -a
+
