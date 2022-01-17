@@ -2,7 +2,8 @@ name: Simple Action
 #on: [push]
 on:
   push:
-  pull_request: [opened,closed]
+  pull_request:
+    types: [opened,closed,assigned,reopened]
 
 jobs:
   run-github-actions:
