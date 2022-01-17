@@ -1,8 +1,10 @@
 name: branch test
 on:
   push:
-    branch:
+    branches:
       - master
+      - "feature/*" #matches feature/featA,feature/featB,not match feature/feat/a
+      - "feature/**" #matches all feature/*/*...
 jobs:
   run-branch-test-actions:
     runs-on: ubuntu-latest
