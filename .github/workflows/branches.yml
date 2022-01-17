@@ -2,7 +2,7 @@ name: branch test
 on:
   push:
     branches:
-      - master
+      - firsttest
       - "feature/*" #matches feature/featA,feature/featB,not match feature/feat/a
       - "feature/**" #matches all feature/*/*...
 jobs:
