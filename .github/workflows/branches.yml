@@ -1,4 +1,4 @@
-name: branch test
+name: branch test with PR master
 on:
   pull_request:
     branches:

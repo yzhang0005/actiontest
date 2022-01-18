@@ -1,6 +1,8 @@
-name: Shell Commands
+name: push test with branch master
 
-on: [push]
+on:
+  push:
+    branches: master
 
 jobs:
   run-shell-command:
