@@ -1,0 +1,16 @@
+name: github function tests
+on: push
+jobs:
+  functon_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: string function test
+      - run: |
+         echo ${{ contains('Hello World', 'He' }}
+         echo startsWith('Hello world', 'He')
+         echo endWith('Hello world", 'ld')
+      - name: if testing
+        if: success()
+      - run: |
+          echo ormat('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')
+          echo toJSON(job)
