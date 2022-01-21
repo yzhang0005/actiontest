@@ -12,7 +12,7 @@ jobs:
       - name: if testing
         if: success()
         run: |
-          echo ${{ ormat('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
+          echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
           echo ${{ toJSON(job) }}
       - name: failure status test
         if: failure()
