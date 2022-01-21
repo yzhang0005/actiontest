@@ -14,3 +14,8 @@ jobs:
         run: |
           echo ${{ ormat('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
           echo ${{ toJSON(job) }}
+      - name: failure status test
+        if: failure()
+        run: |
+          echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
+          echo ${{ toJSON(job) }}
