@@ -8,7 +8,7 @@ jobs:
         run: |
          echo ${{ contains('Hello World', 'He') }}
          echo ${{ startsWith('Hello world', 'He') }}
-         echo ${{ endWith('Hello world", 'ld') }}
+         echo ${{ endWith('Hello world', 'ld') }}
       - name: if testing
         if: success()
         run: |
