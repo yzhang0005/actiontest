@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: string function test
+        id: string_test
         run: |
          echo ${{ contains('Hello World', 'He') }}
          echo ${{ startsWith('Hello world', 'He') }}
@@ -13,7 +14,7 @@ jobs:
         if: success()
         run: |
           echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
-          echo ${{ toJSON(job) }}
+          echo ${{ toJSON(steps.id.string_test) }}
       - name: failure status test
         if: failure()
         run: |
